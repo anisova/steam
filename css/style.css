@@ -142,6 +142,7 @@
   background-image: -o-linear-gradient(357.76deg, #1474EB 0%, #6F14EB 50.6%, #E218EF 101.2%);
   background-image: linear-gradient(92.24deg, #1474EB 0%, #6F14EB 50.6%, #E218EF 101.2%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -155,6 +156,92 @@
   font-size: 24px;
   line-height: 28px;
   content: "Понятно";
+}
+
+.btn-refresh {
+  text-decoration: none;
+  margin-right: 20px;
+  width: 305px;
+  height: 70px;
+  font-size: 22px;
+  line-height: 22px;
+}
+
+.btn-text_refresh::before {
+  font-size: 24px;
+  line-height: 28px;
+  content: "Обновить страницу";
+  width: 100%;
+  font-size: 22px;
+  line-height: 20px;
+}
+
+.img-refresh {
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.btn-tomain {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 12px;
+  background-color: #1d1d26;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  color: #FFFFFF;
+  width: 305px;
+  height: 70px;
+  z-index: 50;
+  text-decoration: none;
+}
+
+.btn-tomain:hover .btn-tomain__back1 {
+  background-color: transparent;
+  -webkit-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+.btn-tomain__back {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  background: -o-linear-gradient(357.76deg, #1474eb 0, #6f14eb 50.6%, #e218ef 101.2%);
+  background: linear-gradient(92.24deg, #1474eb 0, #6f14eb 50.6%, #e218ef 101.2%);
+  border-radius: 12px;
+  z-index: -2;
+}
+
+.btn-tomain__back1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  z-index: -1;
+  background-color: black;
 }
 
 * {
@@ -218,21 +305,15 @@ optgroup,
 select,
 textarea {
   color: inherit;
-  /* 1 */
   font: inherit;
-  /* 2 */
   margin: 0;
-  /* 3 */
 }
 
 button,
 html input[type=button],
 input[type=reset],
 input[type=submit] {
-  -webkit-appearance: button;
-  /* 2 */
   cursor: pointer;
-  /* 3 */
 }
 
 button::-moz-focus-inner,
@@ -355,6 +436,7 @@ img {
   background: -o-linear-gradient(357.76deg, #1474EB 0%, #6F14EB 50.6%, #E218EF 101.2%);
   background: linear-gradient(92.24deg, #1474EB 0%, #6F14EB 50.6%, #E218EF 101.2%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-filter: blur(6px);
           filter: blur(6px);
@@ -920,6 +1002,7 @@ img {
   background-image: -o-linear-gradient(357.76deg, #1474EB 0%, #6F14EB 50.6%, #E218EF 101.2%);
   background-image: linear-gradient(92.24deg, #1474EB 0%, #6F14EB 50.6%, #E218EF 101.2%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -1028,8 +1111,12 @@ body.locked {
 
 .error {
   background: url("../img/error_bg.png") no-repeat center bottom/cover;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.error__wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1039,7 +1126,6 @@ body.locked {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  position: relative;
 }
 
 .error__bg1 {
@@ -1061,8 +1147,41 @@ body.locked {
 }
 
 .error__block {
+  width: 60%;
   padding: 10%;
+  height: 90vh;
   background: url("../img/polygon.svg") no-repeat center bottom/contain;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.error__pic {
+  padding-top: 20%;
+  width: 97%;
+}
+
+.error__text {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 20px;
+  line-height: 23px;
+  padding-top: 45px;
+  padding-bottom: 68px;
 }
 
 .buttons {
@@ -1409,6 +1528,7 @@ body.locked {
   background: -o-linear-gradient(357.76deg, #1474EB 0%, #6F14EB 50.6%, #E218EF 101.2%);
   background: linear-gradient(92.24deg, #1474EB 0%, #6F14EB 50.6%, #E218EF 101.2%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -1551,6 +1671,60 @@ body.locked {
   .btn-text_modal-payment::before {
     line-height: calc(
         23px + 5* ((100vw - 320px) /880)
+      );
+  }
+
+  .btn-refresh {
+    width: calc(
+        290px + 15* ((100vw - 320px) /880)
+      );
+  }
+
+  .btn-refresh {
+    height: calc(
+        50px + 20* ((100vw - 320px) /880)
+      );
+  }
+
+  .btn-refresh {
+    font-size: calc(
+        20px + 2* ((100vw - 320px) /880)
+      );
+  }
+
+  .btn-refresh {
+    line-height: calc(
+        20px + 2* ((100vw - 320px) /880)
+      );
+  }
+
+  .btn-text_refresh::before {
+    font-size: calc(
+        20px + 4* ((100vw - 320px) /880)
+      );
+  }
+
+  .btn-text_refresh::before {
+    line-height: calc(
+        23px + 5* ((100vw - 320px) /880)
+      );
+  }
+
+  .btn-text_refresh::before {
+    font-size: calc(
+        20px + 2* ((100vw - 320px) /880)
+      );
+  }
+
+  .btn-tomain {
+    width: calc(
+        290px + 15* ((100vw - 320px) /880)
+      );
+  }
+
+  .btn-tomain {
+    height: calc(
+        50px + 20* ((100vw - 320px) /880)
       );
   }
 
@@ -1755,6 +1929,30 @@ body.locked {
       );
   }
 
+  .error__text {
+    font-size: calc(
+        16px + 4* ((100vw - 320px) /880)
+      );
+  }
+
+  .error__text {
+    line-height: calc(
+        19px + 4* ((100vw - 320px) /880)
+      );
+  }
+
+  .error__text {
+    padding-top: calc(
+        15px + 30* ((100vw - 320px) /880)
+      );
+  }
+
+  .error__text {
+    padding-bottom: calc(
+        30px + 38* ((100vw - 320px) /880)
+      );
+  }
+
   .modal-login__container {
     padding: calc(
         25px + 35* ((100vw - 320px) /880)
@@ -1951,6 +2149,7 @@ body.locked {
 @media (max-width: 1000px) {
   .main {
     background: url("../img/bg.png") no-repeat left bottom/contain;
+    min-height: 1300px;
   }
 
   .login-block {
@@ -1968,6 +2167,16 @@ body.locked {
     height: 100px;
   }
 
+  .footer__left {
+    width: 80%;
+    margin-right: 0;
+  }
+
+  .error__block {
+    background: none;
+    width: 80%;
+  }
+
   .modal-payment__container {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(111, 20, 235, 0.35))), -webkit-gradient(linear, left bottom, left top, from(#21212B), to(#21212B));
     background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(111, 20, 235, 0.35) 100%), -o-linear-gradient(bottom, #21212B, #21212B);
@@ -1980,6 +2189,11 @@ body.locked {
 }
 
 @media (max-width: 768px) {
+  .btn-refresh {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
   .wrapper {
     max-width: 100%;
   }
@@ -2044,10 +2258,6 @@ body.locked {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-
-  .footer__left {
-    margin-right: 0;
   }
 
   .footer__right {
@@ -2161,6 +2371,20 @@ body.locked {
     line-height: 21px;
   }
 
+  .error__block {
+    width: 100%;
+  }
+
+  .buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
   .form__payments-mobile {
     display: block;
   }
@@ -2261,6 +2485,10 @@ body.locked {
 
   .menu__list {
     margin-top: 90px;
+  }
+
+  .error__block {
+    padding: 15px;
   }
 
   .slide .payment__pic {
