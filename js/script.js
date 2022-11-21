@@ -28,8 +28,7 @@ function ham(){
 // Функция работы модального окна с формой
 function toggleModal(modalWindow, openButton, closeButton) {
   const openBtns = document.querySelectorAll(openButton);
-  const modal = document.querySelector(modalWindow);
-  console.log(modal);
+  const modal = document.querySelector(modalWindow); 
   if (modal) {
     const closeBtn = modal.querySelector(closeButton);
     // const cancel = modal.querySelector(".cancel");

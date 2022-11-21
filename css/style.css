@@ -164,7 +164,7 @@
   width: 305px;
   height: 70px;
   font-size: 22px;
-  line-height: 22px;
+  line-height: 20px;
 }
 
 .btn-text_refresh::before {
@@ -920,7 +920,7 @@ img {
   position: absolute;
   left: 0;
   top: 10px;
-  z-index: 10;
+  z-index: 1000;
   padding: 4px 30px 4px 20px;
   background: -o-linear-gradient(357.76deg, #1474EB 0%, #6F14EB 50.6%, #E218EF 101.2%);
   background: linear-gradient(92.24deg, #1474EB 0%, #6F14EB 50.6%, #E218EF 101.2%);
@@ -1694,7 +1694,7 @@ body.locked {
 
   .btn-refresh {
     line-height: calc(
-        20px + 2* ((100vw - 320px) /880)
+        20px + 0* ((100vw - 320px) /880)
       );
   }
 
@@ -2200,6 +2200,7 @@ body.locked {
 
   .main {
     background: url("../img/bg_m.png") no-repeat left bottom/cover;
+    min-height: 1420px;
   }
 
   .header__wrap {
